@@ -45,7 +45,7 @@
       "args": [
         "--dart-define=APP_NAME=Stocks",
         "--dart-define=APP_POLYGON_API_BASE_URL=https://api.polygon.io",
-        "--dart-define=APP_POLYGON_API_KEY=LGMH_VR1psZ1P2jkSOCv06b2ocbdhd_c"
+        "--dart-define=APP_POLYGON_API_KEY="
       ]
     },
   ]

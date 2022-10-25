@@ -1,76 +1,60 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:stocks/src/config/routes.dart';
-import 'package:stocks/src/modules/main_screen/bloc/main_screen_bloc.dart';
-import 'package:stocks/src/environment/variables.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:stocks/src/repositories/user_repository/user_repository.dart';
+import 'package:stocks/src/modules/main_screen/bloc/ticker_search_bloc.dart';
+import 'package:stocks/src/modules/main_screen/bloc/ticker_search_bloc_provider.dart';
 
-class MainScreenWidget extends StatelessWidget {
-  const MainScreenWidget({Key? key}) : super(key: key);
+import 'widget/chart/widget/chart.dart';
+import 'widget/search_field/widget/search_field.dart';
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MainScreenBloc(userRepository: UserRepository()),
-      child: Scaffold(
-        body: Center(
-          child: BlocBuilder<MainScreenBloc, MainScreenState>(
-            builder: (context, state) {
-              if (state is InitState) {
-                context.read<MainScreenBloc>().add(InitEvent());
-              }
-              return Column(
+  Widget build(BuildContext context) =>
+      const TickerSearchBlocProvider(child: _MainScreen());
+}
+
+class _MainScreen extends StatelessWidget {
+  const _MainScreen({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) =>
+      BlocListener<TickerSearchBloc, TickerSearchState>(
+        listenWhen: (previous, current) =>
+            previous.searchError != current.searchError,
+        listener: (context, state) {
+          if (state.searchError != TickerSearchError.none) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('An error occurred: ${state.searchError}'),
+                backgroundColor: Colors.red.shade900,
+              ),
+            );
+          }
+        },
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: SafeArea(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
-                    AppLocalizations.of(context)!.appTitle,
+                  const AnimatedSize(
+                    duration: Duration(milliseconds: 700),
+                    alignment: Alignment.topCenter,
+                    curve: Curves.fastLinearToSlowEaseIn,
+                    child: SearchField(),
                   ),
-                  const Text(
-                    '${EnvironmentVariables.appName} ${EnvironmentVariables.appSuffix}',
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      TextButton(
-                        onPressed: () => context.router.pushNamed(
-                          Routes.cubit.generatePath('Cubit'),
-                        ),
-                        child: const Text('To cubit screen'),
-                      ),
-                      TextButton(
-                        onPressed: () => context.router.pushNamed(
-                          Routes.bloc.generatePath('BLoC'),
-                        ),
-                        child: const Text('To BLoC screen'),
-                      ),
-                    ],
-                  ),
-                  Text(state.user?.getFullName() ?? '-'),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        onPressed: () => context
-                            .read<MainScreenBloc>()
-                            .add(RemoveUserEvent()),
-                        child: const Text('Remove'),
-                      ),
-                      const SizedBox(width: 16),
-                      ElevatedButton(
-                        onPressed: () =>
-                            context.read<MainScreenBloc>().add(AddUserEvent()),
-                        child: const Text('Add'),
-                      ),
-                    ],
+                  BlocBuilder<TickerSearchBloc, TickerSearchState>(
+                    builder: (context, state) => state.pickedTicker != null
+                        ? Expanded(
+                            child: Chart(tickerReference: state.pickedTicker!))
+                        : Container(),
                   ),
                 ],
-              );
-            },
+              ),
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }

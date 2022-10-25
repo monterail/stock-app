@@ -10,7 +10,9 @@
       "type": "dart",
       "args": [
         "--dart-define=APP_NAME=[Dev] Stocks",
-        "--dart-define=APP_SUFFIX=.dev"
+        "--dart-define=APP_SUFFIX=.dev",
+        "--dart-define=APP_POLYGON_API_BASE_URL=https://api.polygon.io",
+        "--dart-define=APP_POLYGON_API_KEY="
       ]
     },
     {
@@ -20,7 +22,9 @@
       "flutterMode": "profile",
       "args": [
         "--dart-define=APP_NAME=[Dev] Stocks",
-        "--dart-define=APP_SUFFIX=.dev"
+        "--dart-define=APP_SUFFIX=.dev",
+        "--dart-define=APP_POLYGON_API_BASE_URL=https://api.polygon.io",
+        "--dart-define=APP_POLYGON_API_KEY="
       ]
     },
     {
@@ -28,7 +32,9 @@
       "request": "launch",
       "type": "dart",
       "args": [
-        "--dart-define=APP_NAME=Stocks"
+        "--dart-define=APP_NAME=Stocks",
+        "--dart-define=APP_POLYGON_API_BASE_URL=https://api.polygon.io",
+        "--dart-define=APP_POLYGON_API_KEY="
       ]
     },
     {
@@ -37,7 +43,9 @@
       "type": "dart",
       "flutterMode": "profile",
       "args": [
-        "--dart-define=APP_NAME=Stocks"
+        "--dart-define=APP_NAME=Stocks",
+        "--dart-define=APP_POLYGON_API_BASE_URL=https://api.polygon.io",
+        "--dart-define=APP_POLYGON_API_KEY="
       ]
     },
   ]

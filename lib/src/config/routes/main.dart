@@ -4,6 +4,6 @@ export 'package:stocks/src/modules/main_screen/view/main_screen_view.dart';
 
 class MainRouteHelper extends ParameterlessRouteHelper {
   static const path = '/';
-  static const widget = MainScreenWidget;
+  static const widget = MainScreen;
   const MainRouteHelper() : super(path: path);
 }

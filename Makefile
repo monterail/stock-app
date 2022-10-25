@@ -7,6 +7,8 @@ dev:
 	flutter $(FLUTTER_METHOD) $(BUILD_TARGET) \
 		--dart-define=APP_NAME="${APP_NAME_DEV}" \
 		--dart-define=APP_SUFFIX=${APP_SUFFIX_DEV} \
+		--dart-define=APP_POLYGON_API_BASE_URL=${APP_POLYGON_API_BASE_URL_DEV} \
+		--dart-define=APP_POLYGON_API_KEY=${APP_POLYGON_API_KEY_DEV} \
 		$(OPTIONS)
 
 .PHONY: run-dev
@@ -42,6 +44,8 @@ build-dev-web:
 prod:
 	flutter $(FLUTTER_METHOD) $(BUILD_TARGET) \
 		--dart-define=APP_NAME="${APP_NAME_PROD}" \
+		--dart-define=APP_POLYGON_API_BASE_URL=${APP_POLYGON_API_BASE_URL_PROD} \
+		--dart-define=APP_POLYGON_API_KEY=${APP_POLYGON_API_KEY_PROD} \
 		$(OPTIONS)
 
 .PHONY: run-prod
@@ -78,6 +82,8 @@ test:
 	flutter test \
 		--dart-define=APP_NAME="Test app" \
 		--dart-define=APP_SUFFIX=.test \
+		--dart-define=APP_POLYGON_API_BASE_URL= \
+		--dart-define=APP_POLYGON_API_KEY= \
 		$(TEST_DIR)
 
 .PHONY: run-tests

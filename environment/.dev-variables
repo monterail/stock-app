@@ -1,2 +1,4 @@
 APP_NAME_DEV = [Dev] Stocks
 APP_SUFFIX_DEV = .dev
+APP_POLYGON_API_BASE_URL_DEV = https://api.polygon.io
+APP_POLYGON_API_KEY_DEV =

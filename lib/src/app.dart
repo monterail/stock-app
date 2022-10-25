@@ -33,6 +33,6 @@ class MyApp extends StatelessWidget {
         onGenerateTitle: (BuildContext context) =>
             AppLocalizations.of(context)!.appTitle,
 
-        theme: ThemeData(),
+        theme: ThemeData(colorSchemeSeed: const Color(0xFF3F51B5)),
       );
 }

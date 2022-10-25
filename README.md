@@ -5,6 +5,9 @@
 3. Obtain [a free Polygon.io](https://polygon.io/?auth=signup) API key, and paste it into `environment/.prod-variables -> APP_POLYGON_API_KEY_PROD` and `environment/.dev-variables -> APP_POLYGON_API_KEY_DEV`.
 4. Prepare an Android or iOS target and run `make run-prod`. The app will be built and ran on the target.
 
+Note:
+Our template is meant for privately hosted repositories hence secrets handling is a bit clunky.
+
 # Built with 🚀 Monterail Flutter app template 🚀
 
 Flutter app template.

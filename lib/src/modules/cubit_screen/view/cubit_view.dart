@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:template/src/modules/cubit_screen/cubit/counter_cubit.dart';
+import 'package:stocks/src/modules/cubit_screen/cubit/counter_cubit.dart';
 
 class CubitView extends StatelessWidget {
   final String? title;

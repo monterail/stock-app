@@ -1,5 +1,5 @@
-import 'package:template/src/repositories/user_repository/src/abstract_user_repository.dart';
-import 'package:template/src/services/hive.dart';
+import 'package:stocks/src/repositories/user_repository/src/abstract_user_repository.dart';
+import 'package:stocks/src/services/hive.dart';
 import 'models/models.dart';
 
 class UserRepository with IHiveRepository<User> implements IUserRepository {

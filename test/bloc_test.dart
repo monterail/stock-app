@@ -1,6 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:template/src/modules/bloc_screen/bloc/counter_bloc.dart';
+import 'package:stocks/src/modules/bloc_screen/bloc/counter_bloc.dart';
 
 void main() {
   group('Bloc counter', () {

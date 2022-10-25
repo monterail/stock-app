@@ -1,7 +1,7 @@
 import 'package:autoequal/autoequal.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:template/src/repositories/user_repository/user_repository.dart';
+import 'package:stocks/src/repositories/user_repository/user_repository.dart';
 
 part 'main_screen_bloc.g.dart';
 part 'main_screen_event.dart';
@@ -14,7 +14,6 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
     on<InitEvent>(_init);
     on<AddUserEvent>(_saveUser);
     on<RemoveUserEvent>(_removeUser);
-    on<ReportSentryError>(_handleReportSentryError);
   }
 
   Future<void> _init(InitEvent event, Emitter<MainScreenState> emit) async {
@@ -40,14 +39,5 @@ class MainScreenBloc extends Bloc<MainScreenEvent, MainScreenState> {
       await userRepository.deleteUser('userKey', user);
       emit(const MainScreenState());
     }
-  }
-
-  void _handleReportSentryError(
-    ReportSentryError event,
-    Emitter<MainScreenState> emit,
-  ) {
-    // This exception will be noted by global bloc observer,
-    // implemented in `services/sentry.dart`.
-    throw Exception('test exception');
   }
 }

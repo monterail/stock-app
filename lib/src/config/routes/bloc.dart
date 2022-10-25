@@ -1,6 +1,6 @@
-import 'package:template/src/config/routes/routes.dart';
-import 'package:template/src/modules/bloc_screen/view/bloc_view.dart';
-export 'package:template/src/modules/bloc_screen/view/bloc_view.dart';
+import 'package:stocks/src/config/routes/routes.dart';
+import 'package:stocks/src/modules/bloc_screen/view/bloc_view.dart';
+export 'package:stocks/src/modules/bloc_screen/view/bloc_view.dart';
 
 class BlocRouteHelper extends RouteHelper<String> {
   static const path = '/bloc/:title';

@@ -16,7 +16,3 @@ class AddUserEvent extends MainScreenEvent with _$AddUserEventAutoequalMixin {}
 @autoequalMixin
 class RemoveUserEvent extends MainScreenEvent
     with _$RemoveUserEventAutoequalMixin {}
-
-@autoequalMixin
-class ReportSentryError extends MainScreenEvent
-    with _$ReportSentryErrorAutoequalMixin {}

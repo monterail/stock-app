@@ -13,7 +13,7 @@ Supports:
 - [x] Testing
 - [x] CI/CD with AppCenter
 - [x] Setup for VS Code
-- [x] Sentry integration
+- [ ] ~Sentry integration~ (Removed for project simplicity)
 - [x] ADR
 - [x] Changelog
 - [x] Caching, saving local data
@@ -190,9 +190,9 @@ To create a route with a parameter:
 1. Add a `RouteHelper` class in `lib/src/config/routes/` directory with defined parameter:
 
 ```dart
-import 'package:template/src/config/routes/routes.dart';
-import 'package:template/src/modules/bloc_screen/view/bloc_view.dart';
-export 'package:template/src/modules/bloc_screen/view/bloc_view.dart';
+import 'package:stocks/src/config/routes/routes.dart';
+import 'package:stocks/src/modules/bloc_screen/view/bloc_view.dart';
+export 'package:stocks/src/modules/bloc_screen/view/bloc_view.dart';
 
 class BlocRouteHelper extends RouteHelper<String> {
   static const path = '/bloc/:title';
@@ -247,9 +247,9 @@ To create a route without any parameters:
 1. Add a `ParameterlessRouteHelper` class in `lib/src/config/routes/` directory:
 
 ```dart
-import 'package:template/src/config/routes/routes.dart';
-import 'package:template/src/modules/main_screen/view/main_screen_view.dart';
-export 'package:template/src/modules/main_screen/view/main_screen_view.dart';
+import 'package:stocks/src/config/routes/routes.dart';
+import 'package:stocks/src/modules/main_screen/view/main_screen_view.dart';
+export 'package:stocks/src/modules/main_screen/view/main_screen_view.dart';
 
 class MainRouteHelper extends ParameterlessRouteHelper {
   static const path = '/';
@@ -282,12 +282,6 @@ class AppRouter extends _$AppRouter {}
 ```
 
 4. Run `make generate-code` to make the new route available in the app.
-
-## 📈 Sentry
-
-After creating Sentry project just pass the DSN to `--dart-define=SENTRY_DSN=value` in `.vscode/launch.json` or when running a `flutter run/build` commands.
-
-[Sentry docs](https://docs.sentry.io/platforms/flutter/)
 
 ## 📆 Changelog
 

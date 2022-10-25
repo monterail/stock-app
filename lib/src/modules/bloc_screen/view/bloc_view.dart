@@ -1,7 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:template/src/modules/bloc_screen/bloc/counter_bloc.dart';
+import 'package:stocks/src/modules/bloc_screen/bloc/counter_bloc.dart';
 
 class BlocView extends StatelessWidget {
   final String? title;

@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:template/src/config/routes.dart';
-import 'package:template/src/modules/main_screen/bloc/main_screen_bloc.dart';
-import 'package:template/src/environment/variables.dart';
+import 'package:stocks/src/config/routes.dart';
+import 'package:stocks/src/modules/main_screen/bloc/main_screen_bloc.dart';
+import 'package:stocks/src/environment/variables.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:template/src/repositories/user_repository/user_repository.dart';
+import 'package:stocks/src/repositories/user_repository/user_repository.dart';
 
 class MainScreenWidget extends StatelessWidget {
   const MainScreenWidget({Key? key}) : super(key: key);
@@ -29,13 +29,6 @@ class MainScreenWidget extends StatelessWidget {
                   ),
                   const Text(
                     '${EnvironmentVariables.appName} ${EnvironmentVariables.appSuffix}',
-                  ),
-                  TextButton.icon(
-                    onPressed: () => context.read<MainScreenBloc>().add(
-                          ReportSentryError(),
-                        ),
-                    label: const Text('Report an error to Sentry'),
-                    icon: const Icon(Icons.error),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,

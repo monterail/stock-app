@@ -9,10 +9,8 @@
       "request": "launch",
       "type": "dart",
       "args": [
-        "--dart-define=APP_NAME=Dev app",
-        "--dart-define=APP_SUFFIX=.dev",
-        "--dart-define=SENTRY_DSN=value",
-        "--dart-define=SENTRY_ENVIRONMENT=development"
+        "--dart-define=APP_NAME=[Dev] Stocks",
+        "--dart-define=APP_SUFFIX=.dev"
       ]
     },
     {
@@ -21,10 +19,8 @@
       "type": "dart",
       "flutterMode": "profile",
       "args": [
-        "--dart-define=APP_NAME=Dev app",
-        "--dart-define=APP_SUFFIX=.dev",
-        "--dart-define=SENTRY_DSN=value",
-        "--dart-define=SENTRY_ENVIRONMENT=development"
+        "--dart-define=APP_NAME=[Dev] Stocks",
+        "--dart-define=APP_SUFFIX=.dev"
       ]
     },
     {
@@ -32,9 +28,7 @@
       "request": "launch",
       "type": "dart",
       "args": [
-        "--dart-define=APP_NAME=Prod app",
-        "--dart-define=SENTRY_DSN=value",
-        "--dart-define=SENTRY_ENVIRONMENT=production"
+        "--dart-define=APP_NAME=Stocks"
       ]
     },
     {
@@ -43,9 +37,7 @@
       "type": "dart",
       "flutterMode": "profile",
       "args": [
-        "--dart-define=APP_NAME=Prod app",
-        "--dart-define=SENTRY_DSN=value",
-        "--dart-define=SENTRY_ENVIRONMENT=production"
+        "--dart-define=APP_NAME=Stocks"
       ]
     },
   ]

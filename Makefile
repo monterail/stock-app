@@ -7,8 +7,6 @@ dev:
 	flutter $(FLUTTER_METHOD) $(BUILD_TARGET) \
 		--dart-define=APP_NAME="${APP_NAME_DEV}" \
 		--dart-define=APP_SUFFIX=${APP_SUFFIX_DEV} \
-		--dart-define=SENTRY_DSN=${SENTRY_DSN_DEV} \
-		--dart-define=SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT_DEV} \
 		$(OPTIONS)
 
 .PHONY: run-dev
@@ -44,8 +42,6 @@ build-dev-web:
 prod:
 	flutter $(FLUTTER_METHOD) $(BUILD_TARGET) \
 		--dart-define=APP_NAME="${APP_NAME_PROD}" \
-		--dart-define=SENTRY_DSN=${SENTRY_DSN_PROD} \
-		--dart-define=SENTRY_ENVIRONMENT=${SENTRY_ENVIRONMENT_PROD} \
 		$(OPTIONS)
 
 .PHONY: run-prod
@@ -81,9 +77,7 @@ build-prod-web:
 test:
 	flutter test \
 		--dart-define=APP_NAME="Test app" \
-		--dart-define=SENTRY_DSN=value \
 		--dart-define=APP_SUFFIX=.test \
-		--dart-define=SENTRY_ENVIRONMENT=test \
 		$(TEST_DIR)
 
 .PHONY: run-tests

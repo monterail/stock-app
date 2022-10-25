@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:template/src/repositories/user_repository/user_repository.dart';
+import 'package:stocks/src/repositories/user_repository/user_repository.dart';
 
 Future<void> setupHive() async {
   WidgetsFlutterBinding.ensureInitialized();

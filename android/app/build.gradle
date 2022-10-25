@@ -26,7 +26,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 def dartEnvironmentVariables = [
-    APP_IDENTIFIER: 'com.monterail.flutter.template',
+    APP_IDENTIFIER: 'example.stocks.app',
     APP_NAME: 'Unflavored Android app',
     APP_SUFFIX: null
 ];

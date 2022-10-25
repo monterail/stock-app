@@ -71,9 +71,9 @@ android {
     signingConfigs {
         release {
             storeFile rootProject.file("upload-keystore.jks")
-            storePassword "password"
+            storePassword "stocks"
             keyAlias "upload"
-            keyPassword "password"
+            keyPassword "stocks"
         }
     }
 

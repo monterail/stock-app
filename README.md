@@ -1,4 +1,11 @@
-# 🚀 Monterail Flutter app template 🚀
+# Setup instructions
+
+1. Clone the repository: `git clone https://github.com/monterail/stock-app.git`.
+2. Open created directory and run `flutter pub get && make generate-code`.
+3. Obtain [a free Polygon.io](https://polygon.io/?auth=signup) API key, and paste it into `environment/.prod-variables -> APP_POLYGON_API_KEY_PROD` and `environment/.dev-variables -> APP_POLYGON_API_KEY_DEV`.
+4. Prepare an Android or iOS target and run `make run-prod`. The app will be built and ran on the target.
+
+# Built with 🚀 Monterail Flutter app template 🚀
 
 Flutter app template.
 
